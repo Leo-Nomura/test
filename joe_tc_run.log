@@ -1,0 +1,529 @@
+ Coupled Input File name = Projects/JOE_TC/Coupled/coupling_joe_tc.in
+
+ Model Coupling: 
+
+
+       Ocean Model MPI nodes: 00000 - 00000
+
+       Waves Model MPI nodes: 00001 - 00001
+
+       Atmos Model MPI nodes: 00002 - 00002
+
+       WAVgrid 01 dt= 300.0 -to- OCNgrid 01 dt=  25.0, CplInt:   600.0 Steps: 00002
+
+       OCNgrid 01 dt=  25.0 -to- WAVgrid 01 dt= 300.0, CplInt:   600.0 Steps: 00024
+
+       ATMgrid 01 dt=  25.0 -to- OCNgrid 01 dt=  25.0, CplInt:   600.0 Steps: 00024
+
+       OCNgrid 01 dt=  25.0 -to- ATMgrid 01 dt=  25.0, CplInt:   600.0 Steps: 00024
+
+       ATMgrid 01 dt=  25.0 -to- WAVgrid 01 dt= 300.0, CplInt:   600.0 Steps: 00024
+
+       WAVgrid 01 dt= 300.0 -to- ATMgrid 01 dt=  25.0, CplInt:   600.0 Steps: 00002
+--------------------------------------------------------------------------------
+ Model Input Parameters:  ROMS version 4.3  
+                          Tuesday - August 4, 2026 - 12:03:06 AM
+--------------------------------------------------------------------------------
+
+SWAN grid   1 is preparing computation
+
+ module_io_quilt_old.F        2959 F
+Quilting with   1 groups of   0 I/O tasks.
+Quilting with   1 groups of   0 I/O tasks.
+ Ntasks in X            1 , ntasks in Y            1
+ Ntasks in X            1 , ntasks in Y            1
+  Domain # 1: dx = 12000.000 m
+  Domain # 1: dx = 12000.000 m
+WRF V4.8.0 MODEL
+No git found or not a git repository, git commit version not available.
+WRF V4.8.0 MODEL
+No git found or not a git repository, git commit version not available.
+ *************************************
+ Parent domain
+ ids,ide,jds,jde            1         200           1         150
+ ims,ime,jms,jme           -4         205          -4         155
+ ips,ipe,jps,jpe            1         200           1         150
+ *************************************
+ *************************************
+ Parent domain
+ ids,ide,jds,jde            1         200           1         150
+ ims,ime,jms,jme           -4         205          -4         155
+ ips,ipe,jps,jpe            1         200           1         150
+ *************************************
+DYNAMICS OPTION: Eulerian Mass Coordinate
+DYNAMICS OPTION: Eulerian Mass Coordinate
+
+ Idealized Coastal shelf
+
+ Operating system  : Linux
+ CPU/hardware      : x86_64
+ Compiler system   : gfortran
+ Compiler command  : /home/z101145763/Nomura/AIT/mpich/bin/mpif90
+ Compiler flags    : -frepack-arrays -fallow-argument-mismatch -fallow-argument-mismatch        -O3 -ffast-math -I/home/z101145763/Nomura/AIT/COAWST_v3.9/SWAN/build/mod -I/home/z101145763/Nomura/AIT/netcdf/include -I/home/z101145763/Nomura/AIT/mct/include -I/home/z101145763/Nomura/AIT/COAWST_v3.9//WRF/main -I/home/z101145763/Nomura/AIT/COAWST_v3.9//WRF/external/esmf_time_f90 -I/home/z101145763/Nomura/AIT/COAWST_v3.9//WRF/frame -I/home/z101145763/Nomura/AIT/COAWST_v3.9//WRF/share -ffree-form -ffree-line-length-none
+ OCN Communicator  : -2080374782,  PET size = 1
+
+ Input Script      : 
+
+ GIT Root URL      : 
+ GIT Revision      : 
+ Local Root        : /home/z101145763/Nomura/AIT/COAWST_v3.9
+ Header Dir        : /home/z101145763/Nomura/AIT/COAWST_v3.9/Projects/JOE_TC/Coupled
+ Header file       : joe_tc.h
+ Analytical Dir    : /home/z101145763/Nomura/AIT/COAWST_v3.9/Projects/JOE_TC/Coupled
+
+ Resolution, Grid 01: 197x147x21,  Parallel Nodes: 1,  Tiling: 1x1
+
+
+ Physical Parameters, Grid: 01
+ =============================
+
+      17280  ntimes            Number of timesteps for 3-D equations.
+     25.000  dt                Timestep size (s) for 3-D equations.
+         30  ndtfast           Number of timesteps for 2-D equations between
+                                 each 3D timestep.
+          1  ERstr             Starting ensemble/perturbation run number.
+          1  ERend             Ending ensemble/perturbation run number.
+          0  nrrec             Number of restart records to read from disk.
+          T  LcycleRST         Switch to recycle time-records in restart file.
+        432  nRST              Number of timesteps between the writing of data
+                                 into restart fields.
+          1  ninfo             Number of timesteps between print of information
+                                 to standard output.
+          T  ldefout           Switch to create a new output NetCDF file(s).
+        864  nHIS              Number of timesteps between the writing fields
+                                 into history file.
+          0  nQCK              Number of timesteps between the writing fields
+                                 into quicksave file.
+          1  ntsAVG            Starting timestep for the accumulation of output
+                                 time-averaged data.
+        432  nAVG              Number of timesteps between the writing of
+                                 time-averaged data into averages file.
+          1  ntsDIA            Starting timestep for the accumulation of output
+                                 time-averaged diagnostics data.
+        432  nDIA              Number of timesteps between the writing of
+                                 time-averaged data into diagnostics file.
+ 0.0000E+00  nl_tnu2(01)       NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for tracer 01: temp
+ 0.0000E+00  nl_tnu2(02)       NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for tracer 02: salt
+ 5.0000E-02  nl_visc2          NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for momentum.
+          F  LuvSponge         Turning OFF sponge on horizontal momentum.
+          F  LtracerSponge(01) Turning OFF sponge on tracer 01: temp
+          F  LtracerSponge(02) Turning OFF sponge on tracer 02: salt
+ 1.0000E-06  Akt_bak(01)       Background vertical mixing coefficient (m2/s)
+                                 for tracer 01: temp
+ 1.0000E-06  Akt_bak(02)       Background vertical mixing coefficient (m2/s)
+                                 for tracer 02: salt
+ 1.0000E-05  Akv_bak           Background vertical mixing coefficient (m2/s)
+                                 for momentum.
+ 5.0000E-06  Akk_bak           Background vertical mixing coefficient (m2/s)
+                                 for turbulent energy.
+ 5.0000E-06  Akp_bak           Background vertical mixing coefficient (m2/s)
+                                 for turbulent generic statistical field.
+      3.000  gls_p             GLS stability exponent.
+      1.500  gls_m             GLS turbulent kinetic energy exponent.
+     -1.000  gls_n             GLS turbulent length scale exponent.
+ 7.6000E-06  gls_Kmin          GLS minimum value of turbulent kinetic energy.
+ 1.0000E-12  gls_Pmin          GLS minimum value of dissipation.
+ 5.4770E-01  gls_cmu0          GLS stability coefficient.
+ 1.4400E+00  gls_c1            GLS shear production coefficient.
+ 1.9200E+00  gls_c2            GLS dissipation coefficient.
+-4.0000E-01  gls_c3m           GLS stable buoyancy production coefficient.
+ 1.0000E+00  gls_c3p           GLS unstable buoyancy production coefficient.
+ 1.0000E+00  gls_sigk          GLS constant Schmidt number for TKE.
+ 1.3000E+00  gls_sigp          GLS constant Schmidt number for PSI.
+   1400.000  charnok_alpha     Charnock factor for Zos calculation.
+      0.500  zos_hsig_alpha    Factor for Zos calculation using Hsig(Awave).
+      0.250  sz_alpha          Factor for Wave dissipation surface tke flux .
+    100.000  crgban_cw         Factor for Craig/Banner surface tke flux.
+      0.500  wec_alpha         WEC factor for roller/breaking energy distribution.
+ 3.0000E-04  rdrg              Linear bottom drag coefficient (m/s).
+ 2.5000E-02  rdrg2             Quadratic bottom drag coefficient.
+ 2.0000E-02  Zob               Bottom roughness (m).
+ 2.0000E-02  Zos               Surface roughness (m).
+          2  Vtransform        S-coordinate transformation equation.
+          4  Vstretching       S-coordinate stretching function.
+ 3.0000E+00  theta_s           S-coordinate surface control parameter.
+ 4.0000E-01  theta_b           S-coordinate bottom  control parameter.
+     50.000  Tcline            S-coordinate surface/bottom layer width (m) used
+                                 in vertical coordinate stretching.
+   1025.000  rho0              Mean density (kg/m3) for Boussinesq approximation.
+      0.000  dstart            Time-stamp assigned to model initialization (days).
+       0.00  time_ref          Reference time for units attribute (yyyymmdd.dd)
+ 0.0000E+00  Tnudg(01)         Nudging/relaxation time scale (days)
+                                 for tracer 01: temp
+ 0.0000E+00  Tnudg(02)         Nudging/relaxation time scale (days)
+                                 for tracer 02: salt
+ 0.0000E+00  Znudg             Nudging/relaxation time scale (days)
+                                 for free-surface.
+ 0.0000E+00  M2nudg            Nudging/relaxation time scale (days)
+                                 for 2D momentum.
+ 0.0000E+00  M3nudg            Nudging/relaxation time scale (days)
+                                 for 3D momentum.
+ 0.0000E+00  obcfac            Factor between passive and active
+                                 open boundary conditions.
+          F  VolCons(1)        NLM western  edge boundary volume conservation.
+          F  VolCons(2)        NLM southern edge boundary volume conservation.
+          F  VolCons(3)        NLM eastern  edge boundary volume conservation.
+          F  VolCons(4)        NLM northern edge boundary volume conservation.
+     10.000  T0                Background potential temperature (C) constant.
+     30.000  S0                Background salinity (PSU) constant.
+      1.000  gamma2            Slipperiness variable: free-slip (1.0) or 
+                                                      no-slip (-1.0).
+          F  LuvSrc            Turning OFF momentum point Sources/Sinks.
+          F  LwSrc             Turning OFF volume influx point Sources/Sinks.
+          F  LtracerSrc(01)    Turning OFF point Sources/Sinks on tracer 01: temp
+          F  LtracerSrc(02)    Turning OFF point Sources/Sinks on tracer 02: salt
+          F  LsshCLM           Turning OFF processing of SSH climatology.
+          F  Lm2CLM            Turning OFF processing of 2D momentum climatology.
+          F  Lm3CLM            Turning OFF processing of 3D momentum climatology.
+          F  LtracerCLM(01)    Turning OFF processing of climatology tracer 01: temp
+          F  LtracerCLM(02)    Turning OFF processing of climatology tracer 02: salt
+          F  LnudgeM2CLM       Turning OFF nudging of 2D momentum climatology.
+          F  LnudgeM3CLM       Turning OFF nudging of 3D momentum climatology.
+          F  LnudgeTCLM(01)    Turning OFF nudging of climatology tracer 01: temp
+          F  LnudgeTCLM(02)    Turning OFF nudging of climatology tracer 02: salt
+
+          T  Hout(idFsur)      Write out free-surface.
+          T  Hout(idUbar)      Write out 2D U-momentum component.
+          T  Hout(idVbar)      Write out 2D V-momentum component.
+          T  Hout(idUvel)      Write out 3D U-momentum component.
+          T  Hout(idVvel)      Write out 3D V-momentum component.
+          T  Hout(idWvel)      Write out W-momentum component.
+          T  Hout(idOvel)      Write out omega vertical velocity.
+          T  Hout(idTvar)      Write out tracer 01: temp
+          T  Hout(idTvar)      Write out tracer 02: salt
+          T  Hout(idUsms)      Write out surface U-momentum stress.
+          T  Hout(idVsms)      Write out surface V-momentum stress.
+          T  Hout(idUbms)      Write out bottom U-momentum stress.
+          T  Hout(idVbms)      Write out bottom V-momentum stress.
+          T  Hout(idUbrs)      Write out bottom U-current stress.
+          T  Hout(idVbrs)      Write out bottom V-current stress.
+          T  Hout(idUbws)      Write out wind-induced, bottom U-wave stress.
+          T  Hout(idVbws)      Write out wind-induced, bottom V-wave stress.
+          T  Hout(idUbcs)      Write out max wind + current, bottom U-wave stress.
+          T  Hout(idVbcs)      Write out max wind + current, bottom V-wave stress.
+          T  Hout(idUVwc)      Write out max wind + current, bottom UV-wave stress.
+          T  Hout(idUbot)      Write out bed wave orbital U-velocity.
+          T  Hout(idVbot)      Write out bed wave orbital V-velocity.
+          T  Hout(idUbur)      Write out bottom U-momentum above bed.
+          T  Hout(idVbvr)      Write out bottom V-momentum above bed.
+          T  Hout(idWamp)      Write out wave height.
+          T  Hout(idWam2)      Write out wave height squared.
+          T  Hout(idWlen)      Write out waves mean wavelength.
+          T  Hout(idWlep)      Write out waves peak wavelength.
+          T  Hout(idWdir)      Write out waves mean direction.
+          T  Hout(idWdip)      Write out peak waves direction.
+          T  Hout(idWptp)      Write out wave surface period.
+          T  Hout(idWpbt)      Write out wave bottom period.
+          T  Hout(idWorb)      Write out wave bottom orbital velocity.
+          T  Hout(idWdif)      Write out wave dissipation due to bottom friction.
+          T  Hout(idWdib)      Write out wave dissipation due to breaking.
+          T  Hout(idWdiw)      Write out wave dissipation due to whitecapping.
+          T  Hout(idVvis)      Write out vertical viscosity: AKv.
+          T  Hout(idMtke)      Write out turbulent kinetic energy.
+          T  Hout(idMtls)      Write out turbulent generic length-scale.
+
+          T  Aout(idFsur)      Write out averaged free-surface.
+          T  Aout(idUbar)      Write out averaged 2D U-momentum component.
+          T  Aout(idVbar)      Write out averaged 2D V-momentum component.
+          T  Aout(idUvel)      Write out averaged 3D U-momentum component.
+          T  Aout(idVvel)      Write out averaged 3D V-momentum component.
+          T  Aout(idOvel)      Write out averaged omega vertical velocity.
+          T  Aout(idTvar)      Write out averaged tracer 01: temp
+          T  Aout(idTvar)      Write out averaged tracer 02: salt
+          T  Aout(idDano)      Write out averaged density anomaly.
+          T  Aout(idZZav)      Write out averaged quadratic <zeta*zeta> term.
+          T  Aout(idU2av)      Write out averaged quadratic <ubar*ubar> term.
+          T  Aout(idV2av)      Write out averaged quadratic <vbar*vbar> term.
+          T  Aout(idHUav)      Write out averaged u-volume flux, Huon.
+          T  Aout(idHVav)      Write out averaged v-volume flux, Hvom.
+          T  Aout(idUUav)      Write out averaged quadratic <u*u> term.
+          T  Aout(idUVav)      Write out averaged quadratic <u*v> term.
+          T  Aout(idVVav)      Write out averaged quadratic <v*v> term.
+          T  Aout(idTTav)      Write out averaged <t*t> for tracer 01: temp
+          T  Aout(idTTav)      Write out averaged <t*t> for tracer 02: salt
+          T  Aout(idUTav)      Write out averaged <u*t> for tracer 01: temp
+          T  Aout(idUTav)      Write out averaged <u*t> for tracer 02: salt
+          T  Aout(idVTav)      Write out averaged <v*t> for tracer 01: temp
+          T  Aout(idVTav)      Write out averaged <v*t> for tracer 02: salt
+          T  Aout(iHUTav)      Write out averaged <Huon*t> for tracer 01: temp
+          T  Aout(iHUTav)      Write out averaged <Huon*t> for tracer 02: salt
+          T  Aout(iHVTav)      Write out averaged <Hvom*t> for tracer 01: temp
+          T  Aout(iHVTav)      Write out averaged <Hvom*t> for tracer 02: salt
+
+          T  Dout(M2rate)      Write out 2D momentum acceleration.
+          T  Dout(M2pgrd)      Write out 2D momentum pressure gradient.
+          T  Dout(M2fcor)      Write out 2D momentum Coriolis force.
+          T  Dout(M2hadv)      Write out 2D momentum horizontal advection.
+          T  Dout(M2xadv)      Write out 2D momentum horizontal X-advection.
+          T  Dout(M2yadv)      Write out 2D momentum horizontal Y-advection.
+          T  Dout(M2hvis)      Write out 2D momentum horizontal viscosity.
+          T  Dout(M2xvis)      Write out 2D momentum horizontal X-viscosity.
+          T  Dout(M2yvis)      Write out 2D momentum horizontal Y-viscosity.
+          T  Dout(M2sstr)      Write out 2D momentum surface stress.
+          T  Dout(M2bstr)      Write out 2D momentum bottom stress.
+
+          T  Dout(M3rate)      Write out 3D momentum acceleration.
+          T  Dout(M3pgrd)      Write out 3D momentum pressure gradient.
+          T  Dout(M3fcor)      Write out 3D momentum Coriolis force.
+          T  Dout(M3hadv)      Write out 3D momentum horizontal advection.
+          T  Dout(M3xadv)      Write out 3D momentum horizontal X-advection.
+          T  Dout(M3yadv)      Write out 3D momentum horizontal Y-advection.
+          T  Dout(M3vadv)      Write out 3D momentum vertical advection.
+          T  Dout(M3hvis)      Write out 3D momentum horizontal viscosity.
+          T  Dout(M3xvis)      Write out 3D momentum horizontal X-viscosity.
+          T  Dout(M3yvis)      Write out 3D momentum horizontal Y-viscosity.
+          T  Dout(M3vvis)      Write out 3D momentum vertical viscosity.
+
+          T  Dout(iTrate)      Write out rate of change of tracer 01: temp
+          T  Dout(iTrate)      Write out rate of change of tracer 02: salt
+          T  Dout(iThadv)      Write out horizontal advection, tracer 01: temp
+          T  Dout(iThadv)      Write out horizontal advection, tracer 02: salt
+          T  Dout(iTxadv)      Write out horizontal X-advection, tracer 01: temp
+          T  Dout(iTxadv)      Write out horizontal X-advection, tracer 02: salt
+          T  Dout(iTyadv)      Write out horizontal Y-advection, tracer 01: temp
+          T  Dout(iTyadv)      Write out horizontal Y-advection, tracer 02: salt
+          T  Dout(iTvadv)      Write out vertical advection, tracer 01: temp
+          T  Dout(iTvadv)      Write out vertical advection, tracer 02: salt
+          T  Dout(iThdif)      Write out horizontal diffusion, tracer 01: temp
+          T  Dout(iThdif)      Write out horizontal diffusion, tracer 02: salt
+          T  Dout(iTxdif)      Write out horizontal X-diffusion, tracer 01: temp
+          T  Dout(iTxdif)      Write out horizontal X-diffusion, tracer 02: salt
+          T  Dout(iTydif)      Write out horizontal Y-diffusion , tracer 01: temp
+          T  Dout(iTydif)      Write out horizontal Y-diffusion , tracer 02: salt
+          T  Dout(iTsdif)      Write out horizontal S-diffusion, tracer 01: temp
+          T  Dout(iTsdif)      Write out horizontal S-diffusion, tracer 02: salt
+          T  Dout(iTvdif)      Write out vertical diffusion, tracer 01: temp
+          T  Dout(iTvdif)      Write out vertical diffusion, tracer 02: salt
+
+          1  inp_lib           Using standard NetCDF library for input files.
+          1  out_lib           Using standard NetCDF library for output files.
+
+ Output/Input Files:
+
+               Output Restart File:  ocean_rst.nc
+               Output History File:  ocean_joe_tcs_his.nc
+              Output Averages File:  ocean_avg.nc
+           Output Diagnostics File:  ocean_dia.nc
+          Physical parameters File:  
+                   Input Grid File:  Projects/JOE_TC/Coupled/joe_tc_grd.nc
+      Input Nonlinear Initial File:  Projects/JOE_TC/Coupled/joe_tc_ocean_init.nc
+  ROMS I/O variables Metadata File:  ROMS/External/varinfo.yaml
+
+ Tile partition information for Grid 01:  197x147x21  tiling: 1x1
+
+     tile     Istr     Iend     Jstr     Jend     Npts
+
+        0        1      197        1      147   608139
+
+ Tile minimum and maximum fractional coordinates for Grid 01:
+   (interior points only)
+
+     tile     Xmin     Xmax     Ymin     Ymax     grid
+
+        0     0.50   197.50     0.50   147.50  RHO-points
+
+        0     1.00   197.00     0.50   147.50    U-points
+
+        0     0.50   197.50     1.00   147.00    V-points
+
+ Maximum halo size in XI and ETA directions:
+
+               HaloSizeI(1) =     414
+               HaloSizeJ(1) =     314
+                TileSide(1) =     201
+                TileSize(1) =   30351
+
+
+ Tracer Advection Scheme: NLM
+ ========================
+
+ Variable               Grid  Horizontal         Vertical
+ ---------              ----  ------------       ------------
+
+ temp                     1   Upstream3          Centered4
+
+ salt                     1   Upstream3          Centered4
+
+ Akima4     Fourth-order Akima advection
+ Centered2  Second-order centered differences advection
+ Centered4  Fourth-order centered differences advection
+ HSIMT      Third High-order Spatial Inteporlation at Middle Time Advection with TVD limiter
+ MPDATA     Multidimensional Positive Definite Advection Algorithm, recursive method
+ Splines    Conservative Parabolic Splines Reconstruction Advection (only vertical; not recommended)
+ Split_U3   Split third-order Upstream Advection
+ Upstream3  Third-order Upstream-biased Advection (only horizontal)
+
+
+ Lateral Boundary Conditions: NLM
+ ============================
+
+ Variable               Grid  West Edge    South Edge   East Edge    North Edge
+ ---------              ----  ----------   ----------   ----------   ----------
+
+ zeta                     1   Closed       Closed       Closed       Closed
+
+ ubar                     1   Closed       Closed       Closed       Closed
+
+ vbar                     1   Closed       Closed       Closed       Closed
+
+ u                        1   Closed       Closed       Closed       Closed
+
+ v                        1   Closed       Closed       Closed       Closed
+
+ temp                     1   Closed       Closed       Closed       Closed
+
+ salt                     1   Closed       Closed       Closed       Closed
+
+ tke                      1   Closed       Closed       Closed       Closed
+
+ Activated C-preprocessing Options:
+
+ JOE_TCs                           Idealized Coastal shelf
+ ANA_BSFLUX                        Analytical kinematic bottom salinity flux
+ ANA_BTFLUX                        Analytical kinematic bottom temperature flux
+ ASSUMED_SHAPE                     Using assumed-shape arrays
+ ATM_PRESS                         Impose inverse barometer effect in pressure gradient term
+ ATM2OCN_FLUXES                    Surface fluxes from ATM Model.
+ AVERAGES                          Writing out time-averaged nonlinear model fields
+ BOUNDARY_ALLREDUCE                Using mpi_allreduce in mp_boundary routine
+ COLLECT_ALLREDUCE                 Using mpi_allreduce in mp_collect routine
+ COARE_TAYLOR_YELLAND              Taylor and Yelland (2001) relation for ZoW in bulk fluxes
+ DIAGNOSTICS_TS                    Computing and writing tracer diagnostic terms
+ DIAGNOSTICS_UV                    Computing and writing momentum diagnostic terms
+ DJ_GRADPS                         Parabolic Splines density Jacobian (Shchepetkin, 2002)
+ DOUBLE_PRECISION                  Double precision arithmetic numerical kernel
+ FRC_COUPLING                      Atmospheric forcing fields are from ESM coupling
+ !GATHER_SENDRECV                  Using mpi_gatherv in mp_gather2d/mp_gather3d routines
+ GLS_MIXING                        Generic Length-Scale turbulence closure
+ KANTHA_CLAYSON                    Kantha and Clayson stability function formulation
+ MASKING                           Land/Sea masking
+ MCT_LIB                           Using Model Coupling Toolkit library
+ MIX_GEO_TS                        Mixing of tracers along geopotential surfaces
+ MIX_S_UV                          Mixing of momentum along constant S-surfaces
+ MPI                               MPI distributed-memory configuration
+ !MULTI_THREAD                     Using mpi_init with single thread level processing
+ NONLINEAR                         Nonlinear Model
+ NONLIN_EOS                        Nonlinear Equation of State for seawater
+ N2S2_HORAVG                       Horizontal smoothing of buoyancy and shear
+ POWER_LAW                         Power-law shape time-averaging barotropic filter
+ PROFILE                           Time profiling activated
+ K_GSCHEME                         Third-order upstream advection of TKE fields
+ REDUCE_ALLREDUCE                  Using mpi_allreduce in mp_reduce routine
+ RI_SPLINES                        Parabolic Spline Reconstruction for Richardson Number
+ !RST_SINGLE                       Double precision fields in restart NetCDF file
+ SALINITY                          Using salinity
+ !SCATTER_BCAST                    Using mpi_scatterv in mp_scatter2d/mp_scatter3d routines
+ STEP2D_LF_AM3                     Predictor/Corrector LF-AM3 stepping scheme
+ SOLVE3D                           Solving 3D Primitive Equations
+ SPLINES_VDIFF                     Parabolic Spline Reconstruction for Vertical Diffusion
+ SPLINES_VVISC                     Parabolic Spline Reconstruction for Vertical Viscosity
+ SSW_BBL                           Sherwood/Signell/Warner Bottom Boundary Layer
+ SSW_CALC_ZNOT                     Internal computation of bottom roughness
+ SWAN_COUPLING                     Two-way SWAN/ROMS coupling
+ TS_DIF2                           Harmonic mixing of tracers
+ UV_ADV                            Advection of momentum
+ UV_COR                            Coriolis term
+ UV_U3HADVECTION                   Third-order upstream horizontal advection of 3D momentum
+ UV_C4VADVECTION                   Fourth-order centered vertical advection of momentum
+ UV_VIS2                           Harmonic mixing of momentum
+ VAR_RHO_2D                        Variable density barotropic mode
+ WAV_COUPLING                      Two-way wave-ocean models coupling
+ WRF_COUPLING                      Atmosphere coupling with WRF
+
+ Process Information:
+
+ Node #    0 (pid=  977083) is active.
+   alloc_space_field: domain            1 ,             641844696  bytes allocated
+   alloc_space_field: domain            1 ,             641844696  bytes allocated
+  med_initialdata_input: calling input_input
+   This input data is not V4:  OUTPUT FROM REAL_EM V2.1.2 PREPROCESSOR
+   Input data is acceptable to use: wrfinput_d01
+  med_initialdata_input: calling input_input
+   This input data is not V4:  OUTPUT FROM REAL_EM V2.1.2 PREPROCESSOR
+   Input data is acceptable to use: wrfinput_d01
+   Resetting the hypsometric_opt from default value of 2 to 1
+   Resetting the hypsometric_opt from default value of 2 to 1
+ CURRENT DATE          = 2005-09-01_00:00:00
+ SIMULATION START DATE = 2005-09-01_00:00:00
+ CURRENT DATE          = 2005-09-01_00:00:00
+ SIMULATION START DATE = 2005-09-01_00:00:00
+Timing for processing wrfinput file (stream 0) for domain        1:    0.05850 elapsed seconds
+Timing for processing wrfinput file (stream 0) for domain        1:    0.05850 elapsed seconds
+Max map factor in domain 1 =  1.06. Scale the dt in the model accordingly.
+ D01: Time step                              =    25.0000000      (s)
+ D01: Grid Distance                          =    12.0000000      (km)
+ D01: Grid Distance Ratio dt/dx              =    2.08333325      (s/km)
+ D01: Ratio Including Maximum Map Factor     =    2.21236515      (s/km)
+ D01: NML defined reasonable_time_step_ratio =    6.00000000
+Max map factor in domain 1 =  1.06. Scale the dt in the model accordingly.
+ D01: Time step                              =    25.0000000      (s)
+ D01: Grid Distance                          =    12.0000000      (km)
+ D01: Grid Distance Ratio dt/dx              =    2.08333325      (s/km)
+ D01: Ratio Including Maximum Map Factor     =    2.21236515      (s/km)
+ D01: NML defined reasonable_time_step_ratio =    6.00000000
+  ---- WARNING : Maybe old non-HVC input, setting default 1d array values for TF
+  ---- WARNING : Older v3 input data detected
+  ---- WARNING : Maybe old non-HVC input, setting default 1d array values for TF
+  ---- WARNING : Older v3 input data detected
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.91300000000001        579.26400000000001       ppm
+ N2O   range =    274.37200000000001        359.79800000000000       ppb
+ CH4   range =    738.98599999999999        997.31100000000004       ppb
+ CFC11 range =    0.0000000000000000        1.4000000000000000E-002  ppt
+ CFC12 range =    0.0000000000000000        2.8809999999999998       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2005 , Julian day =          244
+ CO2   =    3.7936216889869126E-004  volume mixing ratio
+ N2O   =    3.1930379096698032E-007  volume mixing ratio
+ CH4   =    1.7833731523022980E-006  volume mixing ratio
+ CFC11 =    2.5042801270495025E-010  volume mixing ratio
+ CFC12 =    5.4182220605880493E-010  volume mixing ratio
+ Climate GHG input from file from year         1765  to         2499
+ CO2   range =    277.91300000000001        579.26400000000001       ppm
+ N2O   range =    274.37200000000001        359.79800000000000       ppb
+ CH4   range =    738.98599999999999        997.31100000000004       ppb
+ CFC11 range =    0.0000000000000000        1.4000000000000000E-002  ppt
+ CFC12 range =    0.0000000000000000        2.8809999999999998       ppt
+ Normal ending of CAMtr_volume_mixing_ratio file
+ GHG annual values from CAM trace gas file
+ Year =         2005 , Julian day =          244
+ CO2   =    3.7936216889869126E-004  volume mixing ratio
+ N2O   =    3.1930379096698032E-007  volume mixing ratio
+ CH4   =    1.7833731523022980E-006  volume mixing ratio
+ CFC11 =    2.5042801270495025E-010  volume mixing ratio
+ CFC12 =    5.4182220605880493E-010  volume mixing ratio
+INPUT LandUse = "USGS"
+INPUT LandUse = "USGS"
+ LANDUSE TYPE = "USGS" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           16  SNOW CATEGORY =           24
+ LANDUSE TYPE = "USGS" FOUND          61  CATEGORIES           2  SEASONS WATER CATEGORY =           16  SNOW CATEGORY =           24
+At line 6925 of file module_ra_rrtm.f90 (unit = 10, file = 'RRTM_DATA')
+Fortran runtime error: End of file
+
+Error termination. Backtrace:
+#0  0x7f6929288e59 in ???
+#1  0x7f6929289a71 in ???
+#2  0x7f692928a6dc in ???
+#3  0x7f69295206c3 in ???
+#4  0x7f6929521177 in ???
+#5  0x7f6929521304 in ???
+#6  0x7f6929524642 in ???
+#7  0x7f69295248f5 in ???
+#8  0x564dd735f3d3 in ???
+#9  0x564dd7560d44 in ???
+#10  0x564dd75874b9 in ???
+#11  0x564dd6bafc04 in ???
+#12  0x564dd6678e7f in ???
+#13  0x564dd621cc0c in ???
+#14  0x564dd5563a72 in ???
+#15  0x564dd4ff0665 in ???
+#16  0x564dd4fecf1e in ???
+#17  0x7f6927c6d1c9 in __libc_start_call_main
+	at ../sysdeps/nptl/libc_start_call_main.h:58
+#18  0x7f6927c6d28a in __libc_start_main_impl
+	at ../csu/libc-start.c:360
+#19  0x564dd4fecf64 in ???
+#20  0xffffffffffffffff in ???
